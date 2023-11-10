@@ -1,0 +1,87 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: antiquewhite;
+}
+
+.tiles-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4px;
+  justify-content: center;
+  align-items: center;
+  height: 760px;
+  width: 980px;
+  border-radius: 4%;
+  box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.2);
+}
+
+.tile-container,
+.message-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+img {
+  border-radius: 6%;
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+  width: 92%;
+  position: absolute;
+}
+
+h2 {
+  font-family: cursive;
+  color: rgb(16, 16, 84);
+  position: absolute;
+  padding: 5%;
+  margin-left: 40px;
+  margin-right: 40px;
+  text-align: center;
+}
+
+.fadein {
+  animation: fadein 3s;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 5;
+  }
+}
+
+@keyframes wobble {
+  0% {
+    transform: rotate(-0.6deg);
+  }
+
+  25% {
+    transform: rotate(0.6deg);
+  }
+
+  50% {
+    transform: rotate(-0.6deg);
+  }
+
+  75% {
+    transform: rotate(0.6deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+img:hover,
+h2:hover {
+  animation: wobble 0.5s ease-in-out;
+}
